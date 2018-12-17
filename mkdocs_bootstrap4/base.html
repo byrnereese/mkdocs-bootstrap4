@@ -69,7 +69,7 @@
       {%- block extrahead %} {% endblock %}
     </head>
 
-    <body class="{% if page and page.is_homepage %}homepage {% endif %}{%- if page.meta.jumbotron -%}has-jumbotron {%- endif -%}">
+    <body class="{% if page and page.is_homepage %}homepage {% endif %}{%- if page and page.meta.jumbotron -%}has-jumbotron {%- endif -%}">
       
       <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
 	<div class="container">
@@ -175,7 +175,7 @@
       {%- endset %}
 
       {%- block content %}
-      {%- if page.meta.jumbotron -%}
+      {%- if page and page.meta.jumbotron -%}
       <div class="jumbotron">
         <div class="container">
           {{- page.meta.jumbotron_content -}}

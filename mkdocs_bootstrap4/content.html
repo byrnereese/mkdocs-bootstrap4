@@ -1,4 +1,4 @@
-{% if page.meta.source %}
+{% if page and page.meta.source %}
 <div class="source-links">
 {% for filename in page.meta.source %}
     <span class="label label-primary">{{ filename }}</span>
@@ -6,8 +6,7 @@
 </div>
 {% endif %}
 
-{% if page %}
-{% if not page.meta.no_breadcrumb %}
+{% if page and not page.meta.no_breadcrumb %}
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
     {% for doc in page.ancestors|reverse %}
@@ -18,7 +17,6 @@
     {% endif %}
     {% endfor %}
     {% if page %}<li class="breadcrumb-item active" aria-current="page">{{ page.title }}</li>{% endif %}
-    {% endif %}
   </ol>
 </nav>
 {% endif %}
