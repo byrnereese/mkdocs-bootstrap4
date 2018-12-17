@@ -22,6 +22,10 @@ After the theme is installed, edit your [mkdocs.yml] file and set the theme
 
 This theme makes use of the [git-committers plugin](https://github.com/byrnereese/mkdocs-git-committers-plugin) for MkDocs. Consult that plugin's documentation for proper configuration. 
 
+## Screenshot
+
+<img style="max-width:100%;" alt="Screenshot of Bootstrap4 theme for MkDocs" src="/screenshots/mkdocs-bootstrap4.png" align="center" /><br />
+
 ## See Also
 
 [MkDocs]: https://www.mkdocs.org
