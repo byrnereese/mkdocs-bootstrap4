@@ -1,0 +1,47 @@
+{% if page.meta.source %}
+<div class="source-links">
+{% for filename in page.meta.source %}
+    <span class="label label-primary">{{ filename }}</span>
+{% endfor %}
+</div>
+{% endif %}
+
+{% if page %}
+{% if not page.meta.no_breadcrumb %}
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    {% for doc in page.ancestors|reverse %}
+    {% if doc.link %}
+    <li class="breadcrumb-item"><a href="{{ doc.link|e }}">{{ doc.title }}</a></li>
+    {% else %}
+    <li class="breadcrumb-item">{{ doc.title }}</li>
+    {% endif %}
+    {% endfor %}
+    {% if page %}<li class="breadcrumb-item active" aria-current="page">{{ page.title }}</li>{% endif %}
+    {% endif %}
+  </ol>
+</nav>
+{% endif %}
+
+{{ page.content }}
+
+<ul class="metadata page-metadata" data-bi-name="page info" lang="en-us" dir="ltr">
+  <li class="last-updated-holder displayDate loading">
+    <span class="last-updated-text">Last updated:</span>
+    <time role="presentation" datetime="2018-10-25T00:00:00.000Z" data-article-date-source="ms.date">{% if last_commit %}{{ last_commit.commit.committer.date.strftime('%Y-%m-%d') }}{% endif %}</time>
+  </li>
+<!--
+  <li class="readingTime">
+    2 minutes to read
+  </li>
+-->
+  <li class="contributors-holder">
+    <span class="contributors-text">Contributors</span>
+    <ul class="contributors" data-bi-name="contributors">
+      {%- for user in committers -%}
+      <li><a href="{{ user.repos }}" title="{{ user.name }}" data-bi-name="contributorprofile"><img src="../img/contributor.svg" data-src="{{ user.avatar }}?size=32" alt="{{ user.name }}"></a></li>
+      {%- endfor -%}
+    </ul>
+  </li>
+</ul>
+
