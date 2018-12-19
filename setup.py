@@ -12,7 +12,7 @@ setup(
     author_email='byrne@majordojo.com',
     packages=find_packages(),
     include_package_data=True,
-    install_requires=['mkdocs>=1.0','mkdocs-git-committers-plugin'],
+    install_requires=['mkdocs>=1.0','mkdocs-git-committers-plugin>=0.1.3'],
     python_requires='>=2.7.9,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*',
     entry_points={
         'mkdocs.themes': [
