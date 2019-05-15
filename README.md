@@ -9,7 +9,7 @@ Install the theme with pip:
     pip install mkdocs-bootstrap4
 
 After the theme is installed, edit your [mkdocs.yml] file and set the theme
-[name] to `bootstrap`:
+[name] to `bootstrap4`:
 
     theme:
         name: bootstrap4
