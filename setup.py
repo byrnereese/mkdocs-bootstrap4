@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-VERSION = '0.1.4'
+VERSION = '0.1.5'
 
 setup(
     name="mkdocs-bootstrap4",
@@ -12,7 +12,10 @@ setup(
     author_email='byrne@majordojo.com',
     packages=find_packages(),
     include_package_data=True,
-    install_requires=['mkdocs>=1.0','mkdocs-git-committers-plugin>=0.1.3'],
+    install_requires=[
+        'mkdocs>=1.1',
+        'mkdocs-git-committers-plugin>=0.2.0'
+    ],
     python_requires='>=2.7.9,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*',
     entry_points={
         'mkdocs.themes': [
